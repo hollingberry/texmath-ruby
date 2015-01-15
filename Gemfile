@@ -1,4 +1,13 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in texmath-ruby.gemspec
 gemspec
+
+group :development do
+  gem 'pry'
+end
+
+group :development, :test do
+  gem 'bundler', '~> 1.6'
+  gem 'minitest', '~> 5.5'
+  gem 'rake'
+end
