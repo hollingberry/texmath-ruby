@@ -1,5 +1,5 @@
 require 'texmath/version'
 
-module Texmath
+module TeXMath
   # Your code goes here...
 end
