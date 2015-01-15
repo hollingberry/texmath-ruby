@@ -1,5 +1,7 @@
 require 'bundler/gem_tasks'
 
+task :default => :test
+
 desc 'Run the tests'
 task :test do
   $LOAD_PATH.unshift 'lib', 'test'
