@@ -1,20 +1,20 @@
 require 'test_helper'
 
 class ConversionTest < Minitest::Test
-  def test_latex_to_mathml
-    assert_converts :latex, :mathml
+  def test_tex_to_mathml
+    assert_converts :tex, :mathml
   end
 
-  def test_mathml_to_latex
-    assert_converts :mathml, :latex
+  def test_mathml_to_tex
+    assert_converts :mathml, :tex
   end
 
-  def test_latex_to_omml
-    assert_converts :latex, :omml
+  def test_tex_to_omml
+    assert_converts :tex, :omml
   end
 
-  def test_omml_to_latex
-    assert_converts :omml, :latex
+  def test_omml_to_tex
+    assert_converts :omml, :tex
   end
 
   def test_mathml_to_omml
@@ -28,12 +28,13 @@ class ConversionTest < Minitest::Test
   private
 
   def assert_converts(from, to)
-    input, output = send(from), send(to)
-    assert_equal output, TeXMath.convert(input, from: from, to: to)
-    assert_equal output, TeXMath.send(from, input).send("to_#{to}")
+    input, expected_output = send(from), send(to)
+    actual_output = TeXMath.convert(input, from: from, to: to)
+    assert_equal expected_output.chomp, actual_output.chomp
+    # assert_equal output, TeXMath.send(from, input).send("to_#{to}")
   end
 
-  def latex
+  def tex
     '\sqrt{x^{3}}'
   end
 

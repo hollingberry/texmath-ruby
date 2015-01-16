@@ -1,5 +1,10 @@
+require 'texmath/converter'
 require 'texmath/version'
 
 module TeXMath
-  # Your code goes here...
+  module_function
+
+  def convert(data, options = {})
+    Converter.new(options).convert(data)
+  end
 end
