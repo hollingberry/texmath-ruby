@@ -53,7 +53,13 @@ Finally, you can use the reader/writer helper methods for maximum readability.
 TeXMath.latex('\sqrt{x^3}').to_mathml
 ```
 
-TeXMath can convert between LaTeX, MathML, and OMML, in any direction.
+TeXMath can convert between LaTeX, MathML, and OMML, in any direction. By
+default (if either the source or destination format isn't explicitly
+specified), TeXMath will try to convert from LaTeX to MathML.
+
+```ruby
+TeXMath.convert('\sqrt{x^3}')
+```
 
 ## Contributing
 
