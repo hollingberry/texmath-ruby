@@ -1,3 +1,4 @@
+require 'texmath/errors'
 require 'open3'
 
 module TeXMath
@@ -49,23 +50,23 @@ module TeXMath
         stdin.close
         output = stdout.read
         error = stderr.read
-        raise ArgumentError.new(error) unless error.empty?
+        raise ConversionError.new(error) unless error.empty?
         return output.strip
       end
     rescue Errno::ENOENT
-      raise ArgumentError.new("Can't find the '#{EXECUTABLE}' executable.")
+      raise NoExecutableError.new("Can't find the '#{EXECUTABLE}' executable.")
     end
 
     attr_reader :reader, :writer
     
     def reader=(format)
       return @reader = format if READERS.has_key?(format.to_s)
-      raise ArgumentError.new("Can't find '#{format}' reader.")
+      raise NoReaderError.new("Can't find '#{format}' reader.")
     end
 
     def writer=(format)
       return @writer = format if WRITERS.has_key?(format.to_s)
-      raise ArgumentError.new("Can't find '#{format}' writer.")
+      raise NoWriterError.new("Can't find '#{format}' writer.")
     end
 
     private
