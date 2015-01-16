@@ -32,7 +32,7 @@ module TeXMath
     }
     
     ##
-    # Create a new Converter instance.
+    # Create a new Converter.
     # @param from [Symbol] the source format
     # @param to [Symbol] the destination format
     def initialize(from: :tex, to: :mathml)
@@ -50,7 +50,7 @@ module TeXMath
         output = stdout.read
         error = stderr.read
         raise ArgumentError.new(error) unless error.empty?
-        return output
+        return output.strip
       end
     end
 
