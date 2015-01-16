@@ -52,19 +52,13 @@ module TeXMath
     attr_reader :reader, :writer
     
     def reader=(format)
-      if READERS.has_key?(format.to_s)
-        @reader = format
-      else
-        raise ArgumentError.new("Can't find '#{format}' reader.")
-      end
+      return @reader = format if READERS.has_key?(format.to_s)
+      raise ArgumentError.new("Can't find '#{format}' reader.")
     end
 
     def writer=(format)
-      if WRITERS.has_key?(format.to_s)
-        @writer = format
-      else
-        raise ArgumentError.new("Can't find '#{format}' writer.")
-      end
+      return @writer = format if WRITERS.has_key?(format.to_s)
+      raise ArgumentError.new("Can't find '#{format}' writer.")
     end
 
     private
