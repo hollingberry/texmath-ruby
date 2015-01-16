@@ -17,20 +17,28 @@ First, make sure [texmath](https://github.com/jgm/texmath) is installed. If you
 already have [The Haskell Platform](https://www.haskell.org/platform/), you can
 install texmath with Cabal:
 
-    $ cabal install texmath
+```shell
+$ cabal install texmath
+```
 
 If you use [Bundler](http://bundler.io), then add this line to your
 application's Gemfile:
 
-    gem 'texmath-ruby', require: 'texmath'
+```ruby
+gem 'texmath-ruby', require: 'texmath'
+```
 
 And then execute:
 
-    $ bundle
+```shell
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install texmath-ruby
+```shell
+$ gem install texmath-ruby
+```
 
 ## Usage
 
