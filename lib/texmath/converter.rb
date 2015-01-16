@@ -1,6 +1,11 @@
 require 'open3'
 
 module TeXMath
+  ##
+  # A `Converter` represents a single `texmath` command to which data
+  # can be piped. For example, a `Converter` that converts LaTeX to
+  # MathML can be reused for different input expressions, although all
+  # would have to be valid LaTeX.
   class Converter
     ##
     # The executable.
