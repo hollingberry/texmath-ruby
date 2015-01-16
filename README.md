@@ -47,7 +47,7 @@ This will return a string of MathML. You can also use `TeXMath.convert`.
 TeXMath.convert('\sqrt{x^3}', from: :latex, to: :mathml)
 ```
 
-Finally, this can be shortened even further.
+Finally, you can use the reader/writer helper methods for maximum readability.
 
 ```ruby
 TeXMath.latex('\sqrt{x^3}').to_mathml
