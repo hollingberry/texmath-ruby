@@ -1,45 +1,10 @@
-require 'test_helper'
-
-class ConversionTest < Minitest::Test
-  def test_tex_to_mathml
-    assert_converts :tex, :mathml
-  end
-
-  def test_mathml_to_tex
-    assert_converts :mathml, :tex
-  end
-
-  def test_tex_to_omml
-    assert_converts :tex, :omml
-  end
-
-  def test_omml_to_tex
-    assert_converts :omml, :tex
-  end
-
-  def test_mathml_to_omml
-    assert_converts :mathml, :omml
-  end
-
-  def test_omml_to_mathml
-    assert_converts :omml, :mathml
-  end
-
-  private
-
-  def assert_converts(from, to)
-    input, expected_output = send(from), send(to)
-    actual_output = TeXMath.convert(input, from: from, to: to)
-    assert_equal expected_output.chomp, actual_output.chomp
-    # assert_equal output, TeXMath.send(from, input).send("to_#{to}")
-  end
-
+module Formats
   def tex
     '\sqrt{x^{3}}'
   end
 
   def mathml
-    <<-XML.gsub(/^      /, '')
+    <<-XML.gsub(/^      /, '').strip
       <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
         <msqrt>
           <msup>
@@ -52,7 +17,7 @@ class ConversionTest < Minitest::Test
   end
 
   def omml
-    <<-XML.gsub(/^      /, '')
+    <<-XML.gsub(/^      /, '').strip
       <m:oMathPara>
         <m:oMathParaPr>
           <m:jc m:val="center" />
@@ -87,5 +52,33 @@ class ConversionTest < Minitest::Test
         </m:oMath>
       </m:oMathPara>
     XML
+  end
+
+  def xhtml
+    <<-XML.gsub(/^      /, '').strip
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <meta content="application/xhtml+xml; charset=UTF-8" http-equiv="Content-Type" />
+        </head>
+        <body>
+          <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+            <msqrt>
+              <msup>
+                <mi>x</mi>
+                <mn>3</mn>
+              </msup>
+            </msqrt>
+          </math>
+        </body>
+      </html>
+    XML
+  end
+
+  def pandoc
+    '[Math DisplayMath "\\\\sqrt{x^{3}}"]'
+  end
+
+  def native
+    '[ESqrt (ESuper (EIdentifier "x") (ENumber "3"))]'
   end
 end
