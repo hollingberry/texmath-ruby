@@ -39,16 +39,14 @@ module TeXMath
     # Convert `data` between formats.
     # @return [String] the converted data
     def convert(data)
-      output = ''
-      error = ''
       Open3.popen3(command) do |stdin, stdout, stderr| 
         stdin.puts(data)
         stdin.close
         output = stdout.read
         error = stderr.read
+        raise ArgumentError.new(error) unless error.empty?
+        return output
       end
-      raise ArgumentError.new(error) unless error.empty?
-      output
     end
 
     attr_reader :reader, :writer
