@@ -46,19 +46,26 @@ If everything is installed correctly, using TeXMath is incredibly easy. For
 example, converting from LaTeX to MathML looks like this:
 
 ```ruby
-TeXMath::Converter.new(from: :latex, to: :mathml).convert('\sqrt{3}')
+TeXMath::Converter.new(from: :tex, to: :mathml).convert('\sqrt{3}')
 ```
 
-This will return a string of MathML. You can also use `TeXMath.convert`.
+Alternatively, you can use an expression for a slightly different approach.
 
 ```ruby
-TeXMath.convert('\sqrt{x^3}', from: :latex, to: :mathml)
+TeXMath::Expression.new('\sqrt{3}', format: :tex).to_mathml
+```
+
+Both of these examples will return a string of MathML. You can also use
+`TeXMath.convert`.
+
+```ruby
+TeXMath.convert('\sqrt{x^3}', from: :tex, to: :mathml)
 ```
 
 Finally, you can use the reader/writer helper methods for maximum readability.
 
 ```ruby
-TeXMath.latex('\sqrt{x^3}').to_mathml
+TeXMath.tex('\sqrt{x^3}').to_mathml
 ```
 
 TeXMath can convert between LaTeX, MathML, and OMML, in any direction. By
