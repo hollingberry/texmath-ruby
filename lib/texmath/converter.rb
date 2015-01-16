@@ -52,6 +52,8 @@ module TeXMath
         raise ArgumentError.new(error) unless error.empty?
         return output.strip
       end
+    rescue Errno::ENOENT
+      raise ArgumentError.new("Can't find the '#{EXECUTABLE}' executable.")
     end
 
     attr_reader :reader, :writer
