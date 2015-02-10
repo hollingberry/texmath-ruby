@@ -36,11 +36,9 @@ class ConverterTest < Minitest::Test
   end
 
   def test_executable_not_found
-    Converter.const_set(:EXECUTABLE, 'ogremath')
     assert_raises NoExecutableError, "Can't find the 'ogremath' executable." do
-      Converter.new.convert('\sqrt{3}')
+      Converter.new('ogremath').convert('\sqrt{3}')
     end
-    Converter.const_set(:EXECUTABLE, 'texmath')
   end
 
   def test_string_reader_not_found

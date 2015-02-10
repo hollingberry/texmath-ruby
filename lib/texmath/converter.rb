@@ -9,10 +9,6 @@ module TeXMath
   # would have to be valid LaTeX.
   class Converter
     ##
-    # The executable.
-    EXECUTABLE = 'texmath'
-
-    ##
     # The available readers and their corresponding names.
     READERS = {
       'tex' => 'LaTeX',
@@ -31,15 +27,19 @@ module TeXMath
       'pandoc' => 'pandoc native',
       'native' => 'texmath native'
     }
-    
+
     ##
     # Create a new Converter.
+    # @param executable [String] the executable path
     # @param from [Symbol] the source format
     # @param to [Symbol] the destination format
-    def initialize(from: :tex, to: :mathml)
+    def initialize(executable = 'texmath', from: :tex, to: :mathml)
+      @executable = executable
       self.reader = from
       self.writer = to
     end
+
+    attr_reader :executable
 
     ##
     # Convert `data` between formats.
@@ -54,11 +54,11 @@ module TeXMath
         return output.strip
       end
     rescue Errno::ENOENT
-      raise NoExecutableError.new("Can't find the '#{EXECUTABLE}' executable.")
+      raise NoExecutableError.new("Can't find the '#{executable}' executable.")
     end
 
     attr_reader :reader, :writer
-    
+
     def reader=(format)
       return @reader = format if READERS.has_key?(format.to_s)
       raise NoReaderError.new("Can't find '#{format}' reader.")
@@ -72,7 +72,7 @@ module TeXMath
     private
 
     def command
-      "#{EXECUTABLE} -f #{@reader} -t #{@writer}"
+      "#{executable} -f #{reader} -t #{writer}"
     end
   end
 end
