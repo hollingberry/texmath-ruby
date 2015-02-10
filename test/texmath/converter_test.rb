@@ -69,7 +69,7 @@ class ConverterTest < Minitest::Test
 
   def assert_converts(from, to)
     input, expected_output = send(from), send(to)
-    actual_output = Converter.new(from: from, to: to).convert(input)
+    actual_output = TeXMath.convert(input, from: from, to: to)
     assert_equal expected_output, actual_output
   end
 end
