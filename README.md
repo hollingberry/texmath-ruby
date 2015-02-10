@@ -4,12 +4,11 @@ A wrapper for [TeXMath](https://github.com/jgm/texmath), a Haskell library for
 converting between formats used to represent mathematics.
 
 TeXMath can convert between LaTeX, presentation MathML, and OMML (Office Math
-Markup Language). This wrapper uses the command line program for texmath for
-all operations (rather than interface directly with the Haskell library) and is
-heavily based on [William Melody's
-wrapper](https://github.com/alphabetum/pandoc-ruby) for
-[Pandoc](https://github.com/jgm/pandoc). In fact, Pandoc and TeXMath were
-written by the same author, John MacFarlane.
+Markup Language). This wrapper uses the command line program for
+texmath for all operations (rather than interface directly with the
+Haskell library) and is heavily based on
+[William Melody's wrapper](https://github.com/alphabetum/pandoc-ruby)
+for [Pandoc](https://github.com/jgm/pandoc).
 
 ## Installation
 
@@ -42,43 +41,37 @@ $ gem install texmath-ruby
 
 ## Usage
 
-If everything is installed correctly, using TeXMath is incredibly easy. For
-example, converting from LaTeX to MathML looks like this:
+Once everything is installed correctly, using TeXMath is incredibly easy.
 
-```ruby
-TeXMath::Converter.new(from: :tex, to: :mathml).convert('\sqrt{3}')
-```
-
-Alternatively, you can use an expression for a slightly different approach.
-
-```ruby
-TeXMath::Expression.new('\sqrt{3}', format: :tex).to_mathml
-```
-
-Both of these examples will return a string of MathML. You can also use
-`TeXMath.convert`.
+For example, converting from LaTeX to MathML looks like this:
 
 ```ruby
 TeXMath.convert('\sqrt{x^3}', from: :tex, to: :mathml)
+  # => '<math display="block" xmlns=...'
 ```
 
-Finally, you can use the reader/writer helper methods for maximum readability.
+TeXMath can convert between LaTeX, MathML, and OMML, in any
+direction. By default (if either the source or destination format
+isn't explicitly specified), TeXMath will try to convert from LaTeX to
+MathML. So to convert from LaTeX (the default source format) to OMML:
 
 ```ruby
-TeXMath.tex('\sqrt{x^3}').to_mathml
+TeXMath.convert('\sqrt{x^3}', to: :omml)
+  # => '<m:oMathPara>...'
 ```
 
-TeXMath can convert between LaTeX, MathML, and OMML, in any direction. By
-default (if either the source or destination format isn't explicitly
-specified), TeXMath will try to convert from LaTeX to MathML.
+Or from OMML to MathML (the default destination format):
 
 ```ruby
-TeXMath.convert('\sqrt{x^3}')
+TeXMath.convert('<m:oMathPara>...', from: :omml)
+  # => '<math display="block" xmlns=...'
 ```
+
+TeXMath also comes with writers for XHTML and Pandoc's native format.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/texmath-ruby/fork )
+1. Fork it ( https://github.com/hollingberry/texmath-ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
