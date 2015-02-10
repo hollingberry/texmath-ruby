@@ -71,14 +71,14 @@ TeXMath also comes with writers for XHTML and Pandoc's native format.
 
 ## Supported formats
 
-|           Readers           |           Writers           |
-|-----------------------------|-----------------------------|
-| LaTeX (`:tex`)              | LaTeX (`:tex`)              |
-| MathML (`:mathml`)          | MathML (`:mathml`)          |
-| OMML (`:omml`)              | OMML (`:omml`)              |
-| TeXMath native (`:native`)  | XHTML (`:xhtml`)            |
-|                             | Pandoc native (`:pandoc`)   |
-|                             | TeXMath native (`:native`)  |
+|           Format            |  Reader  |  Writer  |
+|-----------------------------|----------|----------|
+| LaTeX (`:tex`)              | &#10004; | &#10004; |
+| MathML (`:mathml`)          | &#10004; | &#10004; |
+| OMML (`:omml`)              | &#10004; | &#10004; |
+| TeXMath native (`:native`)  | &#10004; | &#10004; |
+| XHTML (`:xhtml`)            |          | &#10004; |
+| Pandoc native (`:pandoc`)   |          | &#10004; |
 
 ## Contributing
 
