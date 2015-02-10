@@ -69,6 +69,17 @@ TeXMath.convert('<m:oMathPara>...', from: :omml)
 
 TeXMath also comes with writers for XHTML and Pandoc's native format.
 
+## Supported formats
+
+|           Readers           |           Writers           |
+|-----------------------------|-----------------------------|
+| LaTeX (`:tex`)              | LaTeX (`:tex`)              |
+| MathML (`:mathml`)          | MathML (`:mathml`)          |
+| OMML (`:omml`)              | OMML (`:omml`)              |
+| TeXMath native (`:native`)  | XHTML (`:xhtml`)            |
+|                             | Pandoc native (`:pandoc`)   |
+|                             | TeXMath native (`:native`)  |
+
 ## Contributing
 
 1. Fork it ( https://github.com/hollingberry/texmath-ruby/fork )
