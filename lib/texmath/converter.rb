@@ -61,12 +61,12 @@ module TeXMath
 
     def reader=(format)
       return @reader = format if READERS.has_key?(format.to_s)
-      raise NoReaderError.new("Can't find '#{format}' reader.")
+      raise InvalidReaderError.new("Can't find '#{format}' reader.")
     end
 
     def writer=(format)
       return @writer = format if WRITERS.has_key?(format.to_s)
-      raise NoWriterError.new("Can't find '#{format}' writer.")
+      raise InvalidWriterError.new("Can't find '#{format}' writer.")
     end
 
     private

@@ -13,15 +13,15 @@ module TeXMath
   ##
   # A `NoFormatError` occurs when a reader or writer format is
   # specified that doesn't exist.
-  class NoFormatError < StandardError; end
+  class InvalidFormatError < StandardError; end
 
   ##
   # A `NoReaderError` occurs when a reader format is specified that
   # doesn't exist.
-  class NoReaderError < NoFormatError; end
+  class InvalidReaderError < InvalidFormatError; end
 
   ##
   # A `NoWriterError` occurs when a writer format is specified that
   # doesn't exist.
-  class NoWriterError < NoFormatError; end
+  class InvalidWriterError < InvalidFormatError; end
 end

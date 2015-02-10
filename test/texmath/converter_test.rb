@@ -42,25 +42,25 @@ class ConverterTest < Minitest::Test
   end
 
   def test_string_reader_not_found
-    assert_raises NoReaderError, "Can't find 'pears' reader." do
+    assert_raises InvalidReaderError, "Can't find 'pears' reader." do
       Converter.new(from: 'pears', to: :mathml)
     end
   end
 
   def test_string_writer_not_found
-    assert_raises NoWriterError, "Can't find 'pears' writer." do
+    assert_raises InvalidWriterError, "Can't find 'pears' writer." do
       Converter.new(from: :tex, to: 'pears')
     end
   end
 
   def test_symbol_reader_not_found
-    assert_raises NoReaderError, "Can't find 'pears' reader." do
+    assert_raises InvalidReaderError, "Can't find 'pears' reader." do
       Converter.new(from: :pears, to: :mathml)
     end
   end
 
   def test_symbol_writer_not_found
-    assert_raises NoWriterError, "Can't find 'pears' writer." do
+    assert_raises InvalidWriterError, "Can't find 'pears' writer." do
       Converter.new(from: :tex, to: :pears)
     end
   end
