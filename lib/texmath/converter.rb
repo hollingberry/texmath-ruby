@@ -60,12 +60,12 @@ module TeXMath
     attr_reader :reader, :writer
 
     def reader=(format)
-      return @reader = format if READERS.has_key?(format.to_s)
+      return @reader = format if READERS.key?(format.to_s)
       raise InvalidReaderError.new("Can't find '#{format}' reader.")
     end
 
     def writer=(format)
-      return @writer = format if WRITERS.has_key?(format.to_s)
+      return @writer = format if WRITERS.key?(format.to_s)
       raise InvalidWriterError.new("Can't find '#{format}' writer.")
     end
 
