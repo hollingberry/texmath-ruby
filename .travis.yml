@@ -13,7 +13,4 @@ matrix:
     - rvm: ruby-head
 cache: bundler
 before_install:
-  - sudo apt-get install haskell-platform
-  - cabal update
-  - cabal install -fexecutable texmath
-  - export PATH=$PATH:$HOME/.cabal/bin
+  - curl -L https://www.dropbox.com/s/577u8h68gbpkpzz/texmath?dl=1 -o /bin/texmath
