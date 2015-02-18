@@ -13,3 +13,4 @@ before_install:
   - sudo apt-get install haskell-platform
   - cabal update
   - cabal install -fexecutable texmath
+  - export PATH=$PATH:$HOME/.cabal/bin
