@@ -31,12 +31,12 @@ module TeXMath
     ##
     # Create a new Converter.
     # @param executable [String] the executable path
-    # @param from [Symbol] the source format
-    # @param to [Symbol] the destination format
-    def initialize(executable = 'texmath', from: :tex, to: :mathml)
-      @executable = executable
-      self.reader = from
-      self.writer = to
+    # @param from [Symbol] the source format (defaults to `:tex`)
+    # @param to [Symbol] the destination format (defaults to `:mathml`)
+    def initialize(options = {})
+      @executable = options.fetch(:executable, 'texmath')
+      self.reader = options.fetch(:from, :tex)
+      self.writer = options.fetch(:to, :mathml)
     end
 
     attr_reader :executable
