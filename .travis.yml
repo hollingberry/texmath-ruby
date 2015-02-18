@@ -11,6 +11,7 @@ rvm:
 matrix:
   allow_failures:
     - rvm: ruby-head
+  fast_finish: true
 cache: bundler
 before_install:
   - curl -L https://www.dropbox.com/s/577u8h68gbpkpzz/texmath?dl=1 -o /bin/texmath
