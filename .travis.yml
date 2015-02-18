@@ -11,7 +11,7 @@ matrix:
   fast_finish: true
 cache: bundler
 before_install:
-  - mkdir -p $HOME/bin
-  - export PATH=$HOME/bin:$PATH
-  - curl -L https://www.dropbox.com/s/577u8h68gbpkpzz/texmath?dl=1 -o $HOME/bin/texmath
-  - chmod +x $HOME/bin/texmath
+  - sudo apt-get install haskell-platform
+  - cabal update
+  - cabal install -fexecutable texmath
+  - export PATH=$HOME/.cabal/bin:$PATH
