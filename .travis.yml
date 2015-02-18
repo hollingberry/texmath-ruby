@@ -12,4 +12,4 @@ cache: bundler
 before_install:
   - sudo apt-get install haskell-platform
   - cabal update
-  - cabal install texmath
+  - cabal install -fexecutable texmath
