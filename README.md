@@ -1,5 +1,10 @@
 # texmath-ruby
 
+![Build Status](https://img.shields.io/travis/hollingberry/texmath-ruby.svg)
+![Gem Version](https://img.shields.io/gem/v/texmath-ruby.svg)
+![Gem Downloads](https://img.shields.io/gem/dt/texmath-ruby.svg)
+![Code Climate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)
+
 A wrapper for [TeXMath](https://github.com/jgm/texmath), a Haskell library for
 converting between formats used to represent mathematics.
 
