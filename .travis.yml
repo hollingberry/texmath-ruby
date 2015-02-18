@@ -14,3 +14,4 @@ before_install:
   - mkdir -p $HOME/bin
   - export PATH=$HOME/bin:$PATH
   - curl -L https://www.dropbox.com/s/577u8h68gbpkpzz/texmath?dl=1 -o $HOME/bin/texmath
+  - chmod +x $HOME/bin/texmath
