@@ -4,7 +4,7 @@ gemspec
 
 group :development do
   gem 'pry'
-  gem 'yard'
+  gem 'yard', github: 'lsegal/yard', branch: 'frameless'
 end
 
 group :test do
