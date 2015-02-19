@@ -4,9 +4,10 @@ gemspec
 
 group :development do
   gem 'pry'
+  gem 'yard'
 end
 
-group :development, :test do
+group :test do
   gem 'bundler', '~> 1.6'
   gem 'minitest', '~> 5.5'
   gem 'rake'
