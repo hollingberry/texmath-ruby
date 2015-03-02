@@ -58,14 +58,14 @@ TeXMath.convert('\sqrt{x^3}', from: :tex, to: :mathml)
 TeXMath can convert between LaTeX, MathML, and OMML, in any
 direction. By default (if either the source or destination format
 isn't explicitly specified), TeXMath will try to convert from LaTeX to
-MathML. So to convert from LaTeX (the default source format) to OMML:
+MathML. So to convert from LaTeX, the default source format, to OMML:
 
 ```ruby
 TeXMath.convert('\sqrt{x^3}', to: :omml)
   # => '<m:oMathPara>...'
 ```
 
-Or from OMML to MathML (the default destination format):
+Or from OMML to MathML, the default destination format:
 
 ```ruby
 TeXMath.convert('<m:oMathPara>...', from: :omml)
