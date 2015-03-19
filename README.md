@@ -48,6 +48,10 @@ $ gem install texmath-ruby
 
 Once everything is installed correctly, using TeXMath is incredibly easy.
 
+```ruby
+require 'texmath'
+```
+
 For example, converting from LaTeX to MathML looks like this:
 
 ```ruby
