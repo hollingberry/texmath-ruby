@@ -5,40 +5,41 @@
 [![Gem Downloads](https://img.shields.io/gem/dt/texmath-ruby.svg)](https://rubygems.org/gems/texmath-ruby)
 [![Code Climate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](http://codeclimate.com/github/hollingberry/texmath-ruby)
 
-A wrapper for [TeXMath](https://github.com/jgm/texmath), a Haskell library for
-converting between formats used to represent mathematics.
+A Ruby wrapper for [TeXMath](https://github.com/jgm/texmath), the Haskell
+library for converting between __LaTeX__, presentation __MathML__, and __OMML__
+(Office Math Markup Language).
 
-TeXMath can convert between LaTeX, presentation MathML, and OMML (Office Math
-Markup Language). This wrapper uses the command line program for
-texmath for all operations (rather than interface directly with the
-Haskell library) and is heavily based on
-[William Melody's wrapper](https://github.com/alphabetum/pandoc-ruby)
-for [Pandoc](https://github.com/jgm/pandoc).
+## Synopsis
+
+```ruby
+require 'texmath'
+
+TeXMath.convert('a^2 + b^2 = c^2', :to => :mathml)
+  # => '<math display="block" xmlns=...'
+```
 
 ## Installation
 
 ### Installing the Haskell library
 
-First, make sure [texmath](https://github.com/jgm/texmath) is installed. This
-can be done in two ways.
-
-If you already have [The Haskell Platform](https://www.haskell.org/platform/),
-you can install texmath with Cabal:
-
-```shell
-$ cabal install texmath
-```
-
-Alternatively, if you’re running OS X, you can install with
+If you're running OS X, you can install texmath with
 [Homebrew](http://brew.sh):
 
 ```shell
 $ brew install texmath
 ```
 
+Otherwise, you'll need to install the [The Haskell
+Platform](https://www.haskell.org/platform/) and install texmath with Cabal:
+
+```shell
+$ cabal update
+$ cabal install texmath -fexecutable
+```
+
 ### Installing the Ruby wrapper
 
-If you use [Bundler](http://bundler.io), then add this line to your
+If you use [Bundler](http://bundler.io), add this line to your
 application's Gemfile:
 
 ```ruby
