@@ -17,13 +17,26 @@ for [Pandoc](https://github.com/jgm/pandoc).
 
 ## Installation
 
-First, make sure [texmath](https://github.com/jgm/texmath) is installed. If you
-already have [The Haskell Platform](https://www.haskell.org/platform/), you can
-install texmath with Cabal:
+### Installing the Haskell library
+
+First, make sure [texmath](https://github.com/jgm/texmath) is installed. This
+can be done in two ways.
+
+If you already have [The Haskell Platform](https://www.haskell.org/platform/),
+you can install texmath with Cabal:
 
 ```shell
 $ cabal install texmath
 ```
+
+Alternatively, if you’re running OS X, you can install with
+[Homebrew](http://brew.sh):
+
+```shell
+$ brew install texmath
+```
+
+### Installing the Ruby wrapper
 
 If you use [Bundler](http://bundler.io), then add this line to your
 application's Gemfile:
