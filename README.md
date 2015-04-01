@@ -92,7 +92,7 @@ TeXMath.convert('<m:oMathPara>...', from: :omml)
 
 TeXMath also comes with writers for XHTML and Pandoc's native format.
 
-## Supported formats
+### Supported formats
 
 |             Format            |    Symbol    |  Reader  |  Writer  |
 |-------------------------------|--------------|----------|----------|
