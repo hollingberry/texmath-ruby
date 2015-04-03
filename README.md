@@ -9,6 +9,14 @@ A Ruby wrapper for [TeXMath](https://github.com/jgm/texmath), the Haskell
 library for converting between __LaTeX__, presentation __MathML__, and __OMML__
 (Office Math Markup Language).
 
+Why? Several reasons. Browsers like Safari and Firefox have native support for
+MathML, but it is easier to write equations in LaTeX. Additionally, math
+rendering libraries sometimes demand a specific format. While
+[MathJax](https://www.mathjax.org) has support for both LaTeX and MathML input,
+Khan Academy's just released a much faster library,
+[KaTeX](http://khan.github.io/KaTeX/), that only supports LaTeX markup. This
+library provides a simple Ruby interface for solving these sorts of problems.
+
 ## Synopsis
 
 ```ruby
