@@ -26,6 +26,7 @@ If you're running OS X, you can install texmath with
 [Homebrew](http://brew.sh):
 
 ```shell
+$ brew update
 $ brew install texmath
 ```
 
