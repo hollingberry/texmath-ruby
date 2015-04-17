@@ -52,7 +52,7 @@ If you use [Bundler](http://bundler.io), add this line to your
 application's Gemfile:
 
 ```ruby
-gem 'texmath-ruby', require: 'texmath'
+gem 'texmath-ruby'
 ```
 
 And then execute:
@@ -69,13 +69,7 @@ $ gem install texmath-ruby
 
 ## Usage
 
-Once everything is installed correctly, using TeXMath is incredibly easy.
-
-```ruby
-require 'texmath'
-```
-
-For example, converting from LaTeX to MathML looks like this:
+It's not hard to use TeXMath. For example, to convert from TeX to MathML:
 
 ```ruby
 TeXMath.convert('\sqrt{x^3}', from: :tex, to: :mathml)
