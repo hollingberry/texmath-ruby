@@ -12,3 +12,4 @@ before_install:
   - cabal update
   - cabal install -fexecutable texmath
   - export PATH=$HOME/.cabal/bin:$PATH
+  - texmath --version
