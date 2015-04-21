@@ -64,7 +64,7 @@ $ gem install texmath-ruby
 
 ## Supported formats
 
-|             Format            |    Symbol    |  Reader  |  Writer  |
+|             Format            |    Symbol    |   From   |    To    |
 |-------------------------------|--------------|----------|----------|
 | LaTeX                         | `:tex`       | &#10004; | &#10004; |
 | MathML                        | `:mathml`    | &#10004; | &#10004; |
