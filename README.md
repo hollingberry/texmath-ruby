@@ -17,9 +17,8 @@ TeXMath.convert('a^2 + b^2 = c^2', :from => :tex, :to => :mathml)
   # => '<math display="block" xmlns=...'
 ```
 
-See the [supported
-formats](https://github.com/hollingberry/texmath-ruby#supported-formats) table
-below for a list of the supported math markup formats.
+See the [source](lib/texmath/converter.rb#L11-L29) for a list of the supported
+math markup formats.
 
 ## Installation
 
@@ -61,14 +60,3 @@ Or install it yourself as:
 ```shell
 $ gem install texmath-ruby
 ```
-
-## Supported formats
-
-|             Format            |    Symbol    |   From   |    To    |
-|-------------------------------|--------------|----------|----------|
-| LaTeX                         | `:tex`       | &#10004; | &#10004; |
-| MathML                        | `:mathml`    | &#10004; | &#10004; |
-| Office Math Markup Language   | `:omml`      | &#10004; | &#10004; |
-| TeXMath native                | `:native`    | &#10004; | &#10004; |
-| XHTML                         | `:xhtml`     |          | &#10004; |
-| Pandoc native                 | `:pandoc`    |          | &#10004; |
