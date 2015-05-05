@@ -32,17 +32,13 @@ module Formats
               <m:sSup>
                 <m:e>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:sup>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>3</m:t>
                   </m:r>
                 </m:sup>
