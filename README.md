@@ -24,21 +24,22 @@ math markup formats.
 
 ### Installing the Haskell library
 
-If you're running OS X, you can install texmath with
-[Homebrew](http://brew.sh):
+On __OS X__, you can install texmath with [Homebrew](http://brew.sh):
 
 ```shell
 $ brew update
 $ brew install texmath
 ```
 
-Otherwise, you'll need to install the [The Haskell
+On __Linux__, you'll need to install the [The Haskell
 Platform](https://www.haskell.org/platform/) and install texmath with Cabal:
 
 ```shell
 $ cabal update
 $ cabal install texmath -fexecutable
 ```
+
+Finally, don't forget to add `$HOME/.cabal/bin` to your `$PATH`.
 
 ### Installing the Ruby wrapper
 
